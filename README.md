@@ -1,6 +1,6 @@
 # VivanceData Real-Time Anomaly Detection System
 
-![Anomaly Detection](../vivancedata/public/images/ai-solutions.png)
+![Anomaly Detection](https://raw.githubusercontent.com/Vivancedata/anomaly-detection-system/master/frontend/src/assets/favicon.svg)
 
 ## Overview
 
@@ -18,97 +18,30 @@ VivanceData's Real-Time Anomaly Detection System is a powerful, scalable solutio
 - **Historical Analysis**: Compare current anomalies with historical patterns
 - **Low False Positive Rate**: Advanced filtering to minimize alert fatigue
 
-## Use Cases
-
-### Financial Services
-- Fraud detection in transaction streams
-- Market manipulation identification
-- Trading pattern anomalies
-- Credit risk signal detection
-
-### Cybersecurity
-- Network intrusion detection
-- Unusual access patterns
-- Data exfiltration attempts
-- Zero-day attack identification
-
-### IoT & Manufacturing
-- Predictive maintenance
-- Equipment failure prediction
-- Quality control deviations
-- Supply chain disruptions
-
-### IT Operations
-- Infrastructure performance monitoring
-- Application behavior analysis
-- Service degradation early warning
-- Capacity planning anomalies
-
-## Technical Architecture
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │
-│  Data Ingestion │────▶│  Preprocessing  │────▶│ Feature Extract │
-│  & Streaming    │     │  & Normalization│     │ & Engineering   │
-│                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └────────┬────────┘
-                                                         │
-                                                         ▼
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│                 │     │                 │     │                 │
-│   Notification  │◀────│ Post-Processing │◀────│ Anomaly         │
-│   & Alerting    │     │ & Filtering     │     │ Detection Engine│
-│                 │     │                 │     │                 │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                                                         │
-                                                         ▼
-                                               ┌─────────────────┐
-                                               │                 │
-                                               │ Feedback Loop & │
-                                               │ Model Updating  │
-                                               │                 │
-                                               └─────────────────┘
-```
-
-## Anomaly Detection Methods
-
-Our system employs multiple detection algorithms that work together to maximize accuracy:
-
-1. **Statistical Methods**
-   - Z-score analysis
-   - Moving average decomposition
-   - Exponential smoothing
-   - Extreme value theory
-
-2. **Machine Learning Methods**
-   - Isolation Forests
-   - One-Class SVM
-   - Local Outlier Factor
-   - Clustering-based anomaly detection
-
-3. **Deep Learning Methods**
-   - Autoencoders
-   - LSTM-based sequence anomaly detection
-   - Transformer-based detection
-   - Graph neural networks for relationship anomalies
-
-4. **Specialized Algorithms**
-   - Time series decomposition
-   - Change point detection
-   - Seasonal-trend decomposition
-   - Pattern-based anomaly detection
-
 ## Tech Stack
 
-- **Streaming Platform**: Apache Kafka, Apache Pulsar
-- **Processing Framework**: Apache Flink, Apache Spark Streaming
-- **Machine Learning**: TensorFlow, PyTorch, Scikit-learn
-- **Backend**: Python, FastAPI, Rust (for performance-critical components)
-- **Frontend**: React, TypeScript, D3.js for visualizations
-- **Storage**: TimescaleDB, InfluxDB, Elasticsearch
-- **Observability**: Prometheus, Grafana, OpenTelemetry
-- **Deployment**: Kubernetes, Helm charts
+- **Backend**:
+  - Python
+  - FastAPI
+  - Rust (for performance-critical components)
+  - TensorFlow, PyTorch, Scikit-learn
+  - Apache Kafka/Pulsar for streaming
+
+- **Frontend**:
+  - React
+  - TypeScript
+  - Vite
+  - Tailwind CSS
+  - Shadcn UI components
+
+- **Storage**:
+  - TimescaleDB
+  - InfluxDB
+  - Elasticsearch
+
+- **Deployment**:
+  - Docker
+  - Kubernetes
 
 ## Getting Started
 
@@ -154,44 +87,31 @@ npm install
 npm run dev
 ```
 
-## Performance Benchmarks
+## Project Structure
 
-- **Throughput**: Processes up to 100,000 events per second per node
-- **Latency**: Average detection time under 50ms
-- **Scalability**: Linear scaling with additional nodes
-- **Accuracy**: 97% precision and 95% recall on benchmark datasets
-- **False Positive Rate**: Less than 1% with default configuration
-
-## Documentation
-
-- [User Guide](docs/user-guide.md)
-- [API Documentation](docs/api.md)
-- [Deployment Guide](docs/deployment.md)
-- [Algorithm Details](docs/algorithms.md)
-- [Configuration Options](docs/configuration.md)
-- [Integration Guide](docs/integration.md)
-- [Performance Tuning](docs/performance.md)
-
-## Case Studies
-
-### Major Payment Processor
-After implementing our system, a payment processor:
-- Detected fraud attempts 2.7x faster than their previous solution
-- Reduced false positives by 68%
-- Saved an estimated $4.2M in fraud losses annually
-
-### Manufacturing Company
-A global manufacturer used our system to:
-- Predict equipment failures 3-5 days before occurrence
-- Reduce downtime by 42%
-- Achieve 15% savings in maintenance costs
-
-## Roadmap
-
-- **Q2 2025**: Enhanced federated anomaly detection for edge devices
-- **Q3 2025**: Reinforcement learning for adaptive threshold optimization
-- **Q4 2025**: Domain-specific anomaly detection frameworks
-- **Q1 2026**: Causal analysis of anomaly root causes
+```
+├── backend/               # Python FastAPI backend
+│   ├── src/               # Source code
+│   │   ├── api/           # API endpoints
+│   │   ├── config/        # Configuration
+│   │   ├── models/        # Anomaly detection models
+│   │   ├── services/      # Business logic
+│   │   └── utils/         # Utilities
+│   └── Dockerfile         # Backend container
+├── frontend/              # React/TypeScript frontend
+│   ├── src/               # Source code
+│   │   ├── components/    # Reusable components
+│   │   ├── pages/         # Application pages
+│   │   ├── lib/           # Utility libraries
+│   │   ├── types/         # TypeScript types
+│   │   └── utils/         # Utility functions
+│   └── Dockerfile         # Frontend container
+├── data/                  # Data directories
+│   ├── input/             # Raw input data
+│   ├── processed/         # Processed data
+│   └── models/            # Saved models
+└── docker-compose.yml     # Development environment
+```
 
 ## Contributing
 
