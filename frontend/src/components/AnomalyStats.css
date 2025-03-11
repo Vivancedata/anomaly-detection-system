@@ -1,0 +1,66 @@
+.anomaly-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Severity colors */
+.stat-card:nth-child(1) .stat-value {
+  color: var(--primary-color);
+}
+
+.stat-card:nth-child(2) .stat-value {
+  color: var(--danger-color);
+}
+
+.stat-card:nth-child(3) .stat-value {
+  color: var(--warning-color);
+}
+
+.stat-card:nth-child(4) .stat-value {
+  color: var(--info-color);
+}
+
+.stat-card:nth-child(5) .stat-value {
+  color: var(--success-color);
+}
+
+.stat-card:nth-child(6) .stat-value {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .anomaly-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .anomaly-stats {
+    grid-template-columns: 1fr;
+  }
+}

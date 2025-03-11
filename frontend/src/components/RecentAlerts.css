@@ -1,0 +1,147 @@
+.recent-alerts {
+  height: 100%;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alert-item {
+  background-color: #f8f9fa;
+  border-left: 4px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  position: relative;
+}
+
+.alert-item:hover {
+  background-color: #f1f3f5;
+}
+
+.alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.alert-stream {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.alert-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.alert-severity {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.alert-severity.low {
+  background-color: #e6f7ff;
+  color: #0066cc;
+}
+
+.alert-severity.medium {
+  background-color: #fff8e6;
+  color: #ff9800;
+}
+
+.alert-severity.high {
+  background-color: #ffebee;
+  color: #dc3545;
+}
+
+.alert-description {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.alert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.alert-score {
+  display: flex;
+  align-items: center;
+}
+
+.score-value {
+  font-weight: 600;
+  margin-left: 5px;
+  color: #444;
+}
+
+.alert-time {
+  font-style: italic;
+}
+
+.alert-status {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: #777;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-indicator.open {
+  background-color: #dc3545;
+}
+
+.status-indicator.acknowledged {
+  background-color: #ff9800;
+}
+
+.status-indicator.resolved {
+  background-color: #28a745;
+}
+
+.no-alerts {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .alert-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .alert-severity {
+    margin-top: 5px;
+  }
+  
+  .alert-status {
+    position: static;
+    margin-top: 10px;
+  }
+}
